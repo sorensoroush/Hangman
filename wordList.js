@@ -1,4 +1,4 @@
-wordList = ['aardvark',
+const wordList = ['aardvark',
 'aardwolf',
 'aaron',
 'aback',

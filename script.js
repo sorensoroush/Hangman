@@ -24,19 +24,15 @@ const updateWord = (letter) => {
     if (letter) {
         // As long as there is a match, loop and update i to search after match
         for (i = 0; word.indexOf(letter, i) > -1; i = word.indexOf(letter, i) + 1) {
-            /*
             console.log(`Value of i: ${i}`)
             console.log(`Value of word.indexOf(letter, i): ${word.indexOf(letter, i)}`)
-            console.log(`Hidden word before update: ${hiddenWord}`)
+            console.log(`Hidden word before update: ${hiddenLetters}`)
             console.log(`Letter: ${letter}`)
-            console.log(`Hidden letter before update: ${hiddenWord[word.indexOf(letter)]}`)
-            */
-            hiddenLetters[word.indexOf(letter)] = letter
-            /*
-            console.log(`Hidden word after update: ${hiddenWord}`)
-            console.log(`Hidden letter after update: ${hiddenWord[word.indexOf(letter)]}`)
+            console.log(`Hidden letter before update: ${hiddenLetters[word.indexOf(letter, i)]}`)
+            hiddenLetters[word.indexOf(letter, i)] = letter
+            console.log(`Hidden word after update: ${hiddenLetters}`)
+            console.log(`Hidden letter after update: ${hiddenLetters[word.indexOf(letter, i)]}`)
             console.log(``)
-            */
         }
     }
     hiddenWord = hiddenLetters.join('')
@@ -44,10 +40,6 @@ const updateWord = (letter) => {
 }
 
 const testLetter = (letter) => {
-    /*
-    console.log(`Letter: ${letter}`)
-    console.log(`Does the word include the letter?: ${word.includes(letter)}`)
-    */
     if (word.includes(letter)) {
         updateWord(letter)
     } else {
@@ -76,6 +68,7 @@ const createButtons = () => {
 }
 
 const startGame = () => {
+    buttonsBox.innerHTML = ''
     generateWord()
     updateWord('')
     createButtons()

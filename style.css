@@ -19,6 +19,12 @@ main {
     align-items: center;
 }
 
+#buttons-box button {
+    width: 35px;
+    height: 35px;
+;
+}
+
 #word-field {
     letter-spacing: 1em;
 }

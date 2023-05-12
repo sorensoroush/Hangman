@@ -1,0 +1,12 @@
+generate word
+    pick a random word
+    make a corresponding underscore string (array?)
+
+update word
+    update underscores on screen with word
+
+test letter
+    (called every time button is pressed)
+    test if letter is in word
+    if in word:
+        update word

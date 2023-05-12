@@ -18,3 +18,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+#word-field {
+    letter-spacing: 1em;
+}

@@ -4,6 +4,11 @@ generate word
 
 update word
     update underscores on screen with word
+    if called with a letter
+        check letter in word with indexOf()
+        if indexOf > -1
+
+
 
 test letter
     (called every time button is pressed)

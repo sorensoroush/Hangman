@@ -6,7 +6,7 @@ const wordField = document.getElementById('word-field')
 const resetButton = document.getElementById('reset-button')
 const guessDisplay = document.getElementById('guess-display')
 
-const buttonString = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+const buttonString = ' QWERTYUIOP ASDFGHJKL ZXCVBNM'
 
 let word = ''
 let hiddenLetters = []
@@ -16,7 +16,7 @@ const generateWord = () => {
     randomIndex = Math.round(Math.random() * wordList.length)
     word = wordList[randomIndex].toUpperCase()
     hiddenLetters = []
-    hiddenLetters[word.length - 1] = '_'
+    hiddenLetters[word.length - 1] = '_' // Define the length of the array by adding an element at its last index
     hiddenLetters.fill('_')
     wrongGuesses = 0
     guessDisplay.textContent = `Incorrect guesses: ${wrongGuesses}`
@@ -51,13 +51,20 @@ const buttonPress = (event) => {
 const createButtons = () => {
     buttonsBox.innerHTML = ''
     for (i = 0; i < buttonString.length; i++) {
-        button = document.createElement('button')
         letter = buttonString[i]
-        button.value = letter
-        button.textContent = letter
-        button.classList.add('button')
-        button.addEventListener('click', buttonPress)
-        buttonsBox.appendChild(button)
+        if (letter === ' ') {
+            buttonDiv = document.createElement('div')
+            buttonDiv.classList.add('button-div')
+            buttonsBox.appendChild(buttonDiv)
+        } else {
+            button = document.createElement('button')
+            button.value = letter
+            button.textContent = letter
+            button.classList.add('button')
+            button.addEventListener('click', buttonPress)
+            console.log(buttonsBox.lastChild)
+            buttonsBox.lastChild.appendChild(button)
+        }
     }
 }
 

@@ -15,3 +15,9 @@ test letter
     test if letter is in word
     if in word:
         update word
+
+==========
+Additions:
+    ASCII Hangman (procedurally generate the ASCII)
+    Choose lives & word letter range
+    Additional fonts
